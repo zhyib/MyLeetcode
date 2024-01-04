@@ -1,2 +1,3 @@
 # MyLeetcode
-Record some codes in leetcode contest
+
+Record some codes in leetcode
