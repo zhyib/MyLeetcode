@@ -10,8 +10,6 @@
  * }
  */
 
-import ListNode from "../ListNode";
-
 function insertGreatestCommonDivisors(head: ListNode | null): ListNode | null {
   const map: Record<string, number> = {};
   function gcd(a: number, b: number): number {

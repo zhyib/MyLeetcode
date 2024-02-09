@@ -10,7 +10,6 @@
  * }
  */
 
-import ListNode from "../ListNode";
 function removeNodes(head: ListNode | null): ListNode | null {
   const stack: ListNode[] = [];
   let curr = head;

@@ -10,8 +10,6 @@
  * }
  */
 
-import ListNode from "../ListNode";
-
 function deleteDuplicates(head: ListNode | null): ListNode | null {
   const dummy = new ListNode(-101);
   let prev = dummy;
