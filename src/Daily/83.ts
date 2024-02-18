@@ -10,8 +10,6 @@
  * }
  */
 
-import ListNode from "../ListNode";
-
 function deleteDuplicates(head: ListNode | null): ListNode | null {
   let curr = head;
   while (curr && curr.next !== null) {
