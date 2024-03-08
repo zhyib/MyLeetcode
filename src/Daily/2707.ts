@@ -1,14 +1,12 @@
 function minExtraChar(s: string, dictionary: string[]): number {
-
-  function getMin(arr: string[], index: number): number {
-    if (index === dictionary.length) {
-      return arr.reduce((prev, curr) => prev + curr.length, 0);
+  const dp = new Array<number>(s.length).fill(0)
+  for (let i = 0; i < s.length; i++) {
+    dp[i + 1] = dp[i] + 1;
+    for (let j = i; j >= 0; j--) {
+      if (dictionary.includes(s.substring(j, i + 1))) {
+        dp[i + 1] = Math.min(dp[i + 1], dp[j]);
+      }
     }
-    const newArr = arr.map((item) => {
-      return item.split(dictionary[index])
-    }).flat();
-    return Math.min(getMin(newArr, index + 1), getMin(arr, index + 1))
   }
-
-  return getMin([s], 0);
+  return dp[s.length];
 };
