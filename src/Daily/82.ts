@@ -10,14 +10,24 @@
  * }
  */
 
+import ListNode from "../ListNode";
+
 function deleteDuplicates(head: ListNode | null): ListNode | null {
+  const dummy = new ListNode(-101);
+  let prev = dummy;
   let curr = head;
-  while (curr && curr.next !== null) {
-    if (curr.next.val === curr.val) {
-      curr.next = curr.next.next;
+  while (curr !== null) {
+    if (curr.next === null || curr.next.val !== curr.val) {
+      prev.next = curr;
+      prev = prev.next;
+      curr = prev.next;
     } else {
+      while (curr.next !== null && curr.next.val === curr.val) {
+        curr = curr.next;
+      }
       curr = curr.next;
     }
   }
-  return head;
+  prev.next = null;
+  return dummy.next;
 }
