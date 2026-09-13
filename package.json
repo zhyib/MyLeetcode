@@ -9,6 +9,6 @@
     "typescript-eslint": "^8.41.0"
   },
   "dependencies": {
-    "@datastructures-js/priority-queue": "^5.4.0"
+    "@datastructures-js/priority-queue": "6.3.3"
   }
 }
